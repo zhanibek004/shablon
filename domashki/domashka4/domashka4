@@ -1,0 +1,150 @@
+Здравствуйте, вы говорили что можно на блокноте отправить главное не ворд файл.
+
+----------1
+
+Класс Order теперь отвечает только за хранение данных о заказе
+
+public class Order {
+    private String productName;
+    private int quantity;
+    private double price;
+
+    public Order(String productName, int quantity, double price) {
+        this.productName = productName;
+        this.quantity = quantity;
+        this.price = price;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+}
+
+
+public class PriceCalculator {
+    public double calculateTotalPrice(Order order) {
+        return order.getQuantity() * order.getPrice() * 0.9;
+    }
+}
+
+
+public class PaymentProcessor {
+    public void processPayment(String paymentDetails) {
+        // Логика обработки платежа
+        System.out.println("Payment processed using: " + paymentDetails);
+    }
+}
+
+
+public class NotificationService {
+    public void sendConfirmationEmail(String email) {
+        // Логика отправки уведомления
+        System.out.println("Confirmation email sent to: " + email);
+    }
+}
+
+
+
+--------------------------------3
+
+
+
+public interface IPrintable
+{
+    void Print(string content);
+}
+
+public interface IScannable
+{
+    void Scan(string content);
+}
+
+
+public interface IFaxable
+{
+    void Fax(string content);
+}
+
+
+public class AllInOnePrinter : IPrintable, IScannable, IFaxable
+{
+    public void Print(string content)
+    {
+        Console.WriteLine("Printing: " + content);
+    }
+
+    public void Scan(string content)
+    {
+        Console.WriteLine("Scanning: " + content);
+    }
+
+    public void Fax(string content)
+    {
+        Console.WriteLine("Faxing: " + content);
+    }
+}
+
+
+public class BasicPrinter : IPrintable
+{
+    public void Print(string content)
+    {
+        Console.WriteLine("Printing: " + content);
+    }
+}
+
+
+-------------4
+
+
+public interface INotificationSender
+{
+    public void Send(string message);
+}
+
+public class EmailSender : INotificationSender
+{
+    public void Send(string message)
+    {
+        Console.WriteLine("Email sent: " + message);
+    }
+}
+
+
+public class SmsSender : INotificationSender
+{
+    public void Send(string message)
+    {
+        Console.WriteLine("SMS sent: " + message);
+    }
+}
+
+
+public class NotificationService
+{
+    private readonly INotificationSender _emailSender;
+    private readonly INotificationSender _smsSender;
+
+    public NotificationService(INotificationSender emailSender, INotificationSender smsSender)
+    {
+        _emailSender = emailSender;
+        _smsSender = smsSender;
+    }
+
+    public void SendNotification(string message)
+    {
+        _emailSender.Send(message);
+        _smsSender.Send(message);
+    }
+}
+
+
+
