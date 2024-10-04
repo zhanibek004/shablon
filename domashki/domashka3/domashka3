@@ -1,0 +1,196 @@
+Здравствуйте, вы говорили что можно на блокноте отправить главное не ворд файл.
+
+----------1
+public class Logger {
+
+
+    public void log(String level, String message) {
+        System.out.println(String.format("%s: %s", level, message));
+    }
+
+    public void logError(String message) {
+        log("ERROR", message);
+    }
+
+
+    public void logWarning(String message) {
+        log("WARNING", message);
+    }
+
+
+    public void logInfo(String message) {
+        log("INFO", message);
+    }
+
+    public static void main(String[] args) {
+        Logger logger = new Logger();
+
+
+        logger.logError("Ошибка");
+        logger.logWarning("Предупреждение");
+        logger.logInfo("Информация");
+    }
+}
+
+
+
+---------------2
+
+
+public class Configuration {
+    private String connectionString = "Server=myServer;Database=myDb;User Id=myUser;Password=myPass;";
+
+    public String getConnectionString() {
+        return connectionString;
+    }
+}
+
+public class DatabaseService {
+    public Configuration config;
+
+    public DatabaseService(){}
+    public DatabaseService(Configuration config) {
+        this.config = config;
+    }
+
+    public void connect() {
+        
+        String connectionString = config.getConnectionString();
+        System.out.println("Подключение: " + connectionString);
+    }
+}
+public class LoggingService {
+    public Configuration config;
+    
+    public LoggingService(){}
+    public LoggingService(Configuration config) {
+        this.config = config;
+    }
+
+    public void log(String message) {
+       
+        String connectionString = config.getConnectionString();
+        System.out.println("Запись: " + connectionString + ". Сообщение: " + message);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+       
+        Configuration config = new Configuration();
+
+        
+        DatabaseService dbService = new DatabaseService(config);
+        LoggingService logService = new LoggingService(config);
+
+       
+        dbService.connect();
+        logService.log("Ошибка");
+    }
+}
+
+
+----------------3 метод Kiss
+
+public void pNumber(int[] numbers) {
+    if (numbers == null || numbers.length == 0) {
+        return;  
+    }
+    
+    for (int number : numbers) {
+        if (number > 0) {
+            System.out.println(number);
+        }
+    }
+}
+
+
+---------------------4
+
+
+
+
+public class NumberP {
+
+    public void printPositiveNumbers(int[] numbers) {
+        for (int number : numbers) {
+            if (number > 0) {
+                System.out.println(number);
+            }
+        }
+    }
+
+
+--------------5
+
+
+public int divide(int a, int b) {
+    
+    if (b == 0) {
+        return 0; 
+    }
+    return a / b; 
+}
+
+
+
+---------------6 YAGNI
+
+
+
+public class User {
+    public String name;
+    public String email;
+    public String address;
+
+    public User(){}
+    public User(String name, String email, String address) {
+        this.name = name;
+        this.email = email;
+        this.address = address;
+    }
+
+  
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+   
+    public void saveToDatabase() {
+        System.out.println("Пользователь сохранен в базу данных.");
+    }
+
+
+
+
+-----------------8
+
+
+public class ReportGenerator {
+
+    public void generatePdfReport() {
+   
+        System.out.println("PDF отчет сгенерирован.");
+    }
+    
+}
