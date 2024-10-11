@@ -1,46 +1,56 @@
-import java.util.HashMap;
-import java.util.Map;
-
 class ConfigurationManager {
 
 
     private static final ConfigurationManager instance = new ConfigurationManager();
+    
+    private String url;
+    private String timeout;
 
-    private Map<String, String> settings;
-
+ 
     private ConfigurationManager() {
-        settings = new HashMap<>();
+        
+        this.url = "http://default.com";
+        this.timeout = "30"; 
     }
+
+
     public static ConfigurationManager getInstance() {
         return instance;
     }
-    public void loadSettings(Map<String, String> newSettings) {
-        settings.putAll(newSettings);
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-
-    public String getSetting(String key) {
-        return settings.get(key);
+ 
+    public String getUrl() {
+        return this.url;
     }
 
-    public void setSetting(String key, String value) {
-        settings.put(key, value);
+  
+    public void setTimeout(String timeout) {
+        this.timeout = timeout;
+    }
+
+    public String getTimeout() {
+        return this.timeout;
     }
 }
 public class Main {
     public static void main(String[] args) {
+      
         ConfigurationManager config = ConfigurationManager.getInstance();
-        Map<String, String> initialSettings = new HashMap<>();
-        initialSettings.put("url", "http://example.com");
-        initialSettings.put("timeout", "30");
-        config.loadSettings(initialSettings);
 
+      
+        System.out.println("Def URL: " + config.getUrl());
+        System.out.println("Def Timeout: " + config.getTimeout());
 
-        System.out.println("URL: " + config.getSetting("url"));
-        System.out.println("Timeout: " + config.getSetting("timeout"));
+    
+        config.setUrl("http://fixfixfix");
+        config.setTimeout("60");
 
-
-        config.setSetting("timeout", "60");
-        System.out.println("Updated Timeout: " + config.getSetting("timeout"));
+     
+        System.out.println("обновленный URL: " + config.getUrl());
+        System.out.println("обновленный Timeout: " + config.getTimeout());
     }
 }
