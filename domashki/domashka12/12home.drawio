@@ -1,0 +1,73 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="25.0.0" pages="2">
+  <diagram name="Library Management System Use Case" id="0">
+    <mxGraphModel dx="1000" dy="505" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="usecase-register" value="Register User" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="200" y="100" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="usecase-search" value="View/Search Books" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="200" y="200" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="usecase-reserve" value="Reserve Book" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="200" y="300" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="usecase-manage-books" value="Manage Books" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="400" y="300" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="usecase-manage-branches" value="Manage Branches" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="400" y="500" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-reader-register" style="exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="BDw_FwHvAO6mSfG713pX-4" target="usecase-register" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="139.1131864784187" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-reader-search" style="exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="BDw_FwHvAO6mSfG713pX-4" target="usecase-search" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="147.83342329204868" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-reader-reserve" parent="1" source="BDw_FwHvAO6mSfG713pX-4" target="usecase-reserve" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="156.5229158699234" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-librarian-manage-books" parent="1" source="BDw_FwHvAO6mSfG713pX-1" target="usecase-manage-books" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="386.75765510591646" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-admin-manage-branches" style="exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="BDw_FwHvAO6mSfG713pX-8" target="usecase-manage-branches" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="539.5306792961028" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BDw_FwHvAO6mSfG713pX-1" value="&lt;span style=&quot;text-wrap-mode: wrap;&quot;&gt;Librarian&lt;/span&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="380" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BDw_FwHvAO6mSfG713pX-4" value="&lt;span style=&quot;text-wrap-mode: wrap;&quot;&gt;Reader&lt;/span&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="120" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BDw_FwHvAO6mSfG713pX-11" value="" edge="1" parent="1" target="BDw_FwHvAO6mSfG713pX-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="539.5306792961028" as="sourcePoint" />
+            <mxPoint x="400" y="532" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BDw_FwHvAO6mSfG713pX-8" value="&lt;span style=&quot;text-wrap-mode: wrap;&quot;&gt;Administrator&lt;/span&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="30" y="510" width="30" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="ytBO6ZsBFyqsX6zzBf2k" name="Страница — 2">
+    <mxGraphModel dx="1050" dy="530" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
