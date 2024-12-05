@@ -1,0 +1,98 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Library Management System Use Case">
+    <mxGraphModel dx="2000" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Actors -->
+        <mxCell id="actor-reader" value="Reader" style="shape=actor;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="100" width="40" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-librarian" value="Librarian" style="shape=actor;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="300" width="40" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-admin" value="Administrator" style="shape=actor;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="500" width="40" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Use Cases -->
+        <mxCell id="usecase-register" value="Register User" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="100" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="usecase-search" value="View/Search Books" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="200" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="usecase-reserve" value="Reserve Book" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="300" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="usecase-cancel-reserve" value="Cancel Reservation" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="300" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="usecase-view-history" value="View Reservation History" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="200" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="usecase-manage-books" value="Add/Remove Books" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="400" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="usecase-issue-return" value="Issue/Return Books" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="400" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="usecase-manage-branches" value="Manage Branches" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="500" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="usecase-manage-accounts" value="Manage Accounts" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="500" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="usecase-view-analytics" value="View Analytics" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="500" width="160" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Relationships -->
+        <!-- Reader -->
+        <mxCell id="edge-reader-register" edge="1" parent="1" source="actor-reader" target="usecase-register">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-reader-search" edge="1" parent="1" source="actor-reader" target="usecase-search">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-reader-reserve" edge="1" parent="1" source="actor-reader" target="usecase-reserve">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-reader-cancel-reserve" edge="1" parent="1" source="actor-reader" target="usecase-cancel-reserve">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-reader-view-history" edge="1" parent="1" source="actor-reader" target="usecase-view-history">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Librarian -->
+        <mxCell id="edge-librarian-manage-books" edge="1" parent="1" source="actor-librarian" target="usecase-manage-books">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-librarian-issue-return" edge="1" parent="1" source="actor-librarian" target="usecase-issue-return">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Administrator -->
+        <mxCell id="edge-admin-manage-branches" edge="1" parent="1" source="actor-admin" target="usecase-manage-branches">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-admin-manage-accounts" edge="1" parent="1" source="actor-admin" target="usecase-manage-accounts">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-admin-view-analytics" edge="1" parent="1" source="actor-admin" target="usecase-view-analytics">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Includes and Extends -->
+        <mxCell id="edge-include-reserve" edge="1" parent="1" source="usecase-reserve" target="usecase-cancel-reserve" style="dashed=1;edgeStyle=orthogonalEdgeStyle;">
+          <mxGeometry relative="1" as="geometry" />
+          <mxCell value="<<include>>" vertex="1" parent="1">
+            <mxGeometry x="300" y="320" width="80" height="20" as="geometry" />
+          </mxCell>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
