@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile>
+  <diagram name="OrderSequenceDiagram">
+    <mxGraphModel dx="1467" dy="781" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Lifelines -->
+        <mxCell id="User" value="User" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="120" height="600" as="geometry" />
+        </mxCell>
+        <mxCell id="System" value="System" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="20" width="120" height="600" as="geometry" />
+        </mxCell>
+        <mxCell id="Warehouse" value="Warehouse" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="120" height="600" as="geometry" />
+        </mxCell>
+        <mxCell id="PaymentGateway" value="Payment Gateway" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="20" width="120" height="600" as="geometry" />
+        </mxCell>
+
+        <!-- Interactions -->
+        <mxCell id="UserLogin" value="Login" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="User" target="System">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AddToCart" value="Add items to cart" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="User" target="System">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ConfirmOrder" value="Confirm order" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="User" target="System">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CheckStock" value="Check stock availability" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="System" target="Warehouse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="StockResponse" value="Stock response" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="Warehouse" target="System">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Conditional Payment -->
+        <mxCell id="SelectPayment" value="Select payment method" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="User" target="System">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ProcessPayment" value="Process payment" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="System" target="PaymentGateway">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PaymentSuccess" value="Payment success" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="PaymentGateway" target="System">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OrderConfirmation" value="Order confirmation" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="System" target="User">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Notify Warehouse -->
+        <mxCell id="NotifyWarehouse" value="Notify for order assembly" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="System" target="Warehouse">
+   
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
